@@ -150,10 +150,5 @@ The `transfer` table stores the transfers of TE bucks.
 | `account_to`         | Foreign key to the `accounts` table; identifies the account that the funds are going to         |
 | `amount`             | Amount of the transfer                                                                          |
 
-## How to set up the database
-
-In the database folder, you'll find the database creation scripts and a shell script called `create.sh`. Run `./create.sh` from the database folder in Bash to create the database.
-
-## Authentication
 
 The user registration and authentication functionality for the system has already been implemented. If you review the login code, you'll notice that after successful authentication, an instance of `AuthenticatedUser` is stored in the `currentUser` member variable of `App`. The user's authorization token—meaning JWT—can be accessed from `App` as `currentUser.getToken()`. When the use cases above refer to an "authenticated user", this means a request that includes the token as a header. You can also reference other information about the current user by using the `User` object retrieved from `currentUser.getUser()`.
